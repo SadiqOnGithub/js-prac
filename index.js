@@ -1,61 +1,17 @@
-console.log("======================================");
+console.log("index.js===============================");
 
-let x = 0;
+const button  = document.getElementById("btn");
 
-// const tenTimeouts = Array(10).fill(1).map(() => {
-//   return setTimeout(() => {
-//     console.log("inside real timeout");
-//   }, 100*x++);
-// })
+button.addEventListener("click", () => {
+  Promise.resolve().then(() => console.log('index.js Microtask 1'));
+  console.log('index.js Listner 1');
+})
 
-// console.log(tenTimeouts)
+button.addEventListener("click", () => {
+  Promise.resolve().then(() => console.log('index.js Microtask 2'));
+  console.log('index.js Listner 2');
+})
 
-const tenPromises = Array(10).fill(1).map(() => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("inside timeout", x)
-      resolve("lalala");
-    }, 1000 * ++x);
-    console.log(x)
-  });
-});
+// button.click()
 
-// (() => {
-//   tenPromises.forEach(async (arg) => {
-//     console.log(await arg);
-//   });
-// })();
-
-
-/*
-  LEVEL 1;
-  understanding promise execution with Promise.resolve()
-*/
-
-// Promise.resolve()
-//   .then(() => {
-//     console.log("1.1");
-//     const ab = Promise.resolve()
-//       .then(() => {
-//         console.log("1.1.1");
-//       })
-//       .then(() => {
-//         console.log("1.1.2");
-//       });
-
-//     return ab; // this return makes a huge difference
-//   })
-//   .then(() => console.log("1.2"))
-//   .then(() => console.log("1.3"));
-
-// const what = Promise.resolve()
-//   .then(() => console.log("2.1"))
-//   .then(() => console.log("2.2"))
-//   .then(() => {
-//     console.log("2.3");
-//     return 1;
-//   });
-
-// (async () => console.log("what", await what))();
-
-console.log("======================================");
+console.log("index.js===============================");
