@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<script defer src="index.js"></script>
-		<script defer src="index1.js"></script>
+		<!-- <script defer src="index1.js"></script> -->
 		<style>
 			body {
 				text-align: center;
@@ -35,14 +35,10 @@
 		<h1 id="title" class="blink height">HELLO WORLD</h1>
 
 		<script>
-			const button = document.getElementById("btn");
-
-			button.addEventListener("click", () => {
-				Promise.resolve().then(() => console.log("html Microtask 1"));
-				console.log("html Listner 1");
-			});
-
-			console.log("Hello world form script tag!");
+			let v = 1;
+		</script>
+		<script>
+			console.log(v);
 		</script>
 	</body>
 </html>
