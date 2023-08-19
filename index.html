@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script defer src="index.js"></script>
-    <script defer src="index1.js"></script>
-  </head>
-  <body>
-    <h1 class="blink height">HELLO WORLD</h1>
-    <button id="btn">click me</button>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script defer src="index.js"></script>
+		<script defer src="index1.js"></script>
+		<style>
+			body {
+				text-align: center;
+			}
 
-    <style>
-      body {
-        text-align: center;
-      }
+			.blink {
+				background-color: red;
+			}
 
-      .blink {
-        background-color: red;
-      }
+			h1 {
+				display: inline-block;
+				width: 500px;
+			}
 
-      h1 {
-        display: inline-block;
-        width: 500px;
-      }
+			button {
+				display: inline;
+			}
 
-      button {
-        display: inline;
-      }
+			.height {
+				height: 60vh;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="btn">click me</button>
+		<h1 id="title" class="blink height">HELLO WORLD</h1>
 
-      .height {
-        height: 60vh;
-      }
-    </style>
-    
-  </body>
+		<script>
+			const button = document.getElementById("btn");
+
+			button.addEventListener("click", () => {
+				Promise.resolve().then(() => console.log("html Microtask 1"));
+				console.log("html Listner 1");
+			});
+
+			console.log("Hello world form script tag!");
+		</script>
+	</body>
 </html>

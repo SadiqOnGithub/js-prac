@@ -1,6 +1,6 @@
 console.log("index.js===============================");
 
-const button  = document.getElementById("btn");
+
 
 button.addEventListener("click", () => {
   Promise.resolve().then(() => console.log('index.js Microtask 1'));
